@@ -1,7 +1,7 @@
 # Soroban AccessPass
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![CI](https://github.com/soroban-accesspass/soroban-accesspass/actions/workflows/ci.yml/badge.svg)](https://github.com/soroban-accesspass/soroban-accesspass/actions/workflows/ci.yml)
+[![CI](https://github.com/isihaq123/soroban-accesspass/actions/workflows/ci.yml/badge.svg)](https://github.com/isihaq123/soroban-accesspass/actions/workflows/ci.yml)
 [![Stellar](https://img.shields.io/badge/Network-Stellar%20Soroban-purple)](https://developers.stellar.org/docs/smart-contracts)
 
 A modular, production-grade **access control and permission management primitive** for

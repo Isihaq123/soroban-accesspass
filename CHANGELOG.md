@@ -36,5 +36,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - GitHub Actions CI (fmt, clippy, test, wasm build) and release workflow.
 - Makefile with `build`, `test`, `fmt`, `lint`, `clean`, `deploy-testnet` targets.
 
-[Unreleased]: https://github.com/soroban-accesspass/soroban-accesspass/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/soroban-accesspass/soroban-accesspass/releases/tag/v0.1.0
+[Unreleased]: https://github.com/isihaq123/soroban-accesspass/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/isihaq123/soroban-accesspass/releases/tag/v0.1.0

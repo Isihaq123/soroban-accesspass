@@ -20,7 +20,7 @@ production-grade security primitive.
 ### First build
 
 ```bash
-git clone https://github.com/soroban-accesspass/soroban-accesspass.git
+git clone https://github.com/isihaq123/soroban-accesspass.git
 cd soroban-accesspass
 make build   # wasm build
 make test    # unit tests
