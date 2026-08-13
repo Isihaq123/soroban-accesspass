@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["AccessPass Contributors <contrib@soroban-accesspass.dev>"]
 description = "Modular, production-grade access control and permission management primitive for Soroban smart contracts"
-repository = "https://github.com/isihaq123/soroban-accesspass"
+repository = "https://github.com/Isihaq123/soroban-accesspass"
 license = "MIT"
 readme = "../../README.md"
 keywords = ["soroban", "stellar", "access-control", "rbac", "smart-contract"]
@@ -17,7 +17,7 @@ crate-type = ["cdylib", "rlib"]
 soroban-sdk = { workspace = true }
 
 [dev-dependencies]
-soroban-sdk = { version = "=21.7.7", features = ["testutils"] }
+soroban-sdk = { version = "=20.5.0", features = ["testutils"] }
 
 [features]
 testutils = ["soroban-sdk/testutils"]
