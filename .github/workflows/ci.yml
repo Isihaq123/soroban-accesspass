@@ -33,7 +33,6 @@ jobs:
           targets: wasm32-unknown-unknown
           components: clippy
       - uses: Swatinem/rust-cache@v2
-      # Lint against the native host target (tests + lib) and the wasm target (lib only)
       - run: cargo clippy --target x86_64-unknown-linux-gnu --all-targets -- -D warnings
 
   # ── Unit tests ────────────────────────────────────────────────────────────
@@ -46,9 +45,6 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
       - uses: Swatinem/rust-cache@v2
-      # Run on the native Linux host — soroban testutils requires std.
-      # Note: soroban-env-host has a known Windows-only compile issue with
-      # ed25519-dalek/rand_core on recent Rust stable; this does not affect Linux.
       - run: cargo test --target x86_64-unknown-linux-gnu
 
   # ── Wasm contract build ───────────────────────────────────────────────────
@@ -63,7 +59,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
 
       - name: Install Stellar CLI
-        run: cargo install --locked stellar-cli --features opt
+        run: cargo install --locked stellar-cli@23.0.1 --features opt
 
       - name: Build contract
         run: stellar contract build

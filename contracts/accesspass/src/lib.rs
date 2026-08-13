@@ -31,9 +31,7 @@
 
 #![no_std]
 
-use soroban_sdk::{
-    contract, contractimpl, contracttype, symbol_short, Address, Env, Symbol,
-};
+use soroban_sdk::{contract, contractimpl, contracttype, symbol_short, Address, Env, Symbol};
 
 // ---------------------------------------------------------------------------
 // Rent management constants
@@ -155,13 +153,7 @@ impl SorobanAccessPass {
     /// * `role`       – Short symbol identifying the role (≤ 7 chars).
     /// * `expires_at` – Unix-second timestamp when the role expires.
     ///                  Pass `0` for a permanent (non-expiring) role.
-    pub fn grant_role(
-        env: Env,
-        caller: Address,
-        grantee: Address,
-        role: Symbol,
-        expires_at: u64,
-    ) {
+    pub fn grant_role(env: Env, caller: Address, grantee: Address, role: Symbol, expires_at: u64) {
         caller.require_auth();
         Self::assert_admin(&env, &caller);
 
@@ -319,8 +311,7 @@ impl SorobanAccessPass {
         env.storage().instance().remove(&DataKey::PendingAdmin);
         Self::bump_instance(&env);
 
-        env.events()
-            .publish((symbol_short!("adm_cxl"), caller), ());
+        env.events().publish((symbol_short!("adm_cxl"), caller), ());
     }
 
     /// Completes the two-step Admin transfer.
@@ -346,8 +337,10 @@ impl SorobanAccessPass {
         env.storage().instance().remove(&DataKey::PendingAdmin);
         Self::bump_instance(&env);
 
-        env.events()
-            .publish((symbol_short!("adm_new"), symbol_short!("admin")), new_admin);
+        env.events().publish(
+            (symbol_short!("adm_new"), symbol_short!("admin")),
+            new_admin,
+        );
     }
 
     // -----------------------------------------------------------------------
