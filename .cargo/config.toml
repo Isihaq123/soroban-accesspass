@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# Cargo configuration for Soroban AccessPass
+# ---------------------------------------------------------------------------
+#
+# IMPORTANT: We do NOT set a global [build] target here.
+# Setting `target = "wasm32-unknown-unknown"` globally would break
+# `cargo test`, which must compile to the native host target.
+#
+# Use `stellar contract build` (which passes --target wasm32-unknown-unknown
+# internally) or the `make build` alias for contract compilation.
+# Use `make test` / `cargo test` for running the unit test suite natively.
+
+[alias]
+# Build the contract wasm: `cargo wasm`
+wasm = "build --target wasm32-unknown-unknown --release"
+
+[target.wasm32-unknown-unknown]
+rustflags = ["-C", "target-feature=+bulk-memory"]
