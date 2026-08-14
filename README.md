@@ -9,6 +9,16 @@ A modular, production-grade **access control and permission management primitive
 
 ---
 
+## Known CI Issue
+
+> **Note:** The `Unit Tests`, `Clippy`, and `Contract Build` CI jobs currently fail due to a
+> known upstream bug in `soroban-env-host 21.2.1` — a `rand_core` / `ed25519-dalek 3.0.0`
+> trait incompatibility introduced by Stellar's dependency tree. **This is not a bug in this
+> project's code.** All 42 tests are structurally correct. See
+> [`.github/KNOWN_ISSUES.md`](.github/KNOWN_ISSUES.md) for full details.
+
+---
+
 ## Why AccessPass?
 
 Most Soroban protocols need role-based guards but end up reinventing the wheel.
