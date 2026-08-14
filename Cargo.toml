@@ -6,9 +6,7 @@ members = [
 ]
 
 [workspace.dependencies]
-# soroban-sdk 20.5.0 is the last stable release series without the
-# ed25519-dalek 3.0.0 / rand_core API incompatibility in soroban-env-host.
-soroban-sdk = { version = "=20.5.0" }
+soroban-sdk = { version = "=21.7.7" }
 
 [profile.release]
 opt-level = "z"
